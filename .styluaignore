@@ -1,0 +1,2 @@
+# Vendored third-party code stays byte-identical to upstream (plus header) for diffing.
+src/server/Vendor/ProfileService.luau

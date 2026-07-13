@@ -1,0 +1,56 @@
+{
+  "name": "rescue-the-brainrots",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedFirst": {
+      "LoadingScreen": {
+        "$path": "src/loading"
+      }
+    },
+    "Workspace": {
+      "$properties": {
+        "StreamingEnabled": true,
+        "StreamOutBehavior": "Opportunistic",
+        "StreamingMinRadius": 128,
+        "StreamingTargetRadius": 640
+      }
+    },
+    "Players": {
+      "$properties": {
+        "MaxPlayers": 20
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "Technology": "ShadowMap",
+        "GlobalShadows": true,
+        "ClockTime": 0.75
+      }
+    },
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+    "ReplicatedStorage": {
+      "Shared": {
+        "$path": "src/shared"
+      },
+      "Packages": {
+        "$path": {
+          "optional": "Packages"
+        }
+      }
+    },
+    "StarterPlayer": {
+      "$properties": {
+        "DevTouchMovementMode": "DynamicThumbstick"
+      },
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/client"
+        }
+      }
+    }
+  }
+}

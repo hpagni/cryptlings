@@ -1,0 +1,17 @@
+[package]
+name = "hudso/cryptlings-night-shift"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+# ProfileService: the wally index has only unofficial third-party forks, so the
+# canonical MadStudioRoblox module is vendored at src/server/Vendor/ProfileService.luau
+# (pinned commit in its header).
+
+[dev-dependencies]
+# TestEZ backs src/server/Tests/*.spec.luau (SOP §1.5 economy-critical tests).
+# wally installs dev-dependencies to DevPackages/, which default.project.json
+# does not map (only Packages/, optionally) — so test tooling never ships in
+# production builds; the test-runner stage maps DevPackages where it needs it.
+testez = "roblox/testez@0.4.1"

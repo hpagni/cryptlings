@@ -1,0 +1,16 @@
+# Roblox place files and backups
+*.rbxl
+*.rbxlx
+*.rbxm
+backups/
+
+# Wally / Rojo packages (restored via `wally install`)
+Packages/
+ServerPackages/
+DevPackages/
+
+# Toolchain / editor
+node_modules/
+.tmp_*
+*.reg
+.DS_Store

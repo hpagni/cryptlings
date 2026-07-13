@@ -1,0 +1,6 @@
+std = "roblox"
+# Vendored third-party code is linted upstream, not here.
+exclude = ["src/server/Vendor/**"]
+
+[rules]
+global_usage = "warn"
