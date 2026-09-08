@@ -1,8 +1,8 @@
 # Cryptlings
 
-A co-op extraction-horror and blind-box trading game for Roblox, built end to end by orchestrating autonomous AI agent pipelines over a Roblox Studio toolchain. This repository is the source and the test harness; the place files, art, and operational tooling are kept out (see below).
+A co-op extraction-horror and blind-box trading game for Roblox, built through a multi-agent development pipeline over a Roblox Studio toolchain. This repository is the source and the test harness; the place files, art, and operational tooling are kept out (see below).
 
-The interesting part is not the game, it is how it was built and how it is kept correct: a spec-of-record drives fleets of agents that write the Luau, and every economy-critical path is guarded by a headless test gate the agents must pass before their work is accepted.
+How it was built is as much the point as the game itself. I defined the architecture, the specification of record, the interface contracts between modules, the task boundaries, and the acceptance criteria; coding agents implemented scoped components against those constraints. Every economy-critical path is guarded by a headless test gate, and changes that failed it were not integrated.
 
 ## What is in here
 
@@ -14,7 +14,7 @@ About 57,000 lines of Luau across 109 modules, split into three trust zones:
 
 ## The test gate
 
-`tests/` is a headless Lune suite that runs without Roblox, so an agent can verify its own work before returning it. It covers the parts where a bug costs real money or breaks trust:
+`tests/` is a headless Lune suite that runs without Roblox, so generated changes could be run through the gate before integration. It covers the parts where a bug costs real money or breaks trust:
 
 - `suites/rarity_odds.luau` plus `rarity-sim.luau`: the gacha odds tables, checked against a 200,000-roll Monte Carlo distribution.
 - `suites/price_ladder.luau`: the full product price ladder.
